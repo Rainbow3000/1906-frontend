@@ -1,0 +1,52 @@
+@import '../../responsive'; 
+.product-list-container{
+    width: 100%;
+    height: auto;
+    background-color: #a3a2a01d;;
+    padding-bottom: 20px;
+    h2{
+        text-align: center;
+    }
+    .product-delimiter{
+        width: 10%;
+            height: 5px;
+            background-color: #333;
+            margin: 0 auto;
+            @include mobile{
+                width: 50%;
+            }
+    }
+    .product-list-wraper{
+        width: 1400px;
+        height: auto;
+        margin: 0 auto;
+        background-color: white;
+        margin-top: 10px;
+        border-radius: 5px;
+        .product-list{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            @include mobile{
+                justify-content: space-between;
+            }
+        }
+        @include mobile{
+            width: 100%;
+        }
+    }
+    @include mobile{
+        margin-left: 0;
+        justify-content: space-around;
+        width: 100%;
+        overflow: hidden;
+    }
+    &.product-list-container-fixed {
+            margin-left: 475px;
+            @include mobile {
+                    margin-left: 0;                  
+            }
+    }
+}
