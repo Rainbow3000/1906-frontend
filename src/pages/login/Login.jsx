@@ -5,6 +5,13 @@ import {userLogin,loginStart,loginFalure} from '../../store/slice/userSlice'
 import { useDispatch,useSelector} from 'react-redux'
 import { useNavigate,Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+
+
+//frontend validate : formmik, hookform
+//backend: joi 
+
+
+
 const Login = () => { 
   const {register,handleSubmit,formState:{errors}} = useForm(); 
   const dispatch = useDispatch(); 
@@ -51,7 +58,7 @@ const Login = () => {
             <label htmlFor="">Your email <span>*</span></label>
             <span className='error-login'>{errors.email?.type === "required" && "email is required!"}</span>
             <span className='error-login'>{errors.email?.type === "pattern" && "email is invalid!"}</span>
-            <input name='email' type="email" placeholder='Your email' {...register("email", { required: true, pattern: /^[A-Z0-9 ._%+-]+@[A-Z0-9 .-]+\.[A-Z]{2,}$/i })} />
+            <input required name='email' type="email" placeholder='Your email' {...register("email", { required: true, pattern: /^[A-Z0-9 ._%+-]+@[A-Z0-9 .-]+\.[A-Z]{2,}$/i })} />
           </div>
           <div>
             <label htmlFor="">Password <span>*</span></label>
