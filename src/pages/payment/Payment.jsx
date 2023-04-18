@@ -37,9 +37,9 @@ const Payment = () => {
     navigate('/address'); 
   }
 
-  const handleRadioClick = (e)=>{
-        setPayMethod(e.target.value)
-  }
+  // const handleRadioClick = (e)=>{
+  //       setPayMethod(e.target.value)
+  // }
   const filterProducts = products.map(item => {
     return {productDesc: item.desc,productName: item.name,productId: item._id, quantity: item.quantity, total: item.quantity * item.price, size: item.size, color: item.color,image:item.image[0] }
   })
@@ -111,31 +111,23 @@ const Payment = () => {
             <span className='payment-sumary-payment-total'>Total Pay:<mark>{total}$</mark></span>
             <div className='payment-sumary-delimiter'></div>
                       <div className="payment-sumary-options-pay-order">
-                          <span>Choose order method:</span>
+                          {/* <span>Choose order method:</span> */}
                             
-                                <div className='payment-sumary-option-pay-item'>
+                                {/* <div className='payment-sumary-option-pay-item'>
                                   <input onClick ={(e)=>handleRadioClick(e)} id="Ponline" type="radio" name='pay-order' defaultChecked value="payOnline"/>
                                   <label htmlFor='Ponline'>Pay online</label>                                
                                 </div>
                                 <div className='payment-sumary-option-pay-item'>
                                 <input onClick={(e) => handleRadioClick(e)}  id='RandP' type="radio" name='pay-order' value="receiveAndPay" />
                                   <label htmlFor='RandP'>Receive and Pay</label>
-                                </div>
+                                </div> */}
                                                    
                       </div>
-            <div className='payment-sumary-delimiter'></div>
-                      {
-                        payMethod === "payOnline"?(
-                          <div className='paypal-button-checkout'>
-                            <PaypalCheckoutButton user={user} addressUser={addressUser} products={products} totalPay={total} />
-                          </div>
-                        ):(
+            {/* <div className='payment-sumary-delimiter'></div> */}
+                  
                           <button className='btn-receive-and-pay' onClick={handleOrderOffline}>
                                 Order Now
                           </button>
-                        )
-                      }
-                      
                 </div>
             </div>
         </div>
